@@ -27,6 +27,8 @@ All components, tokens, and icons are loaded via CDN from the design system. No 
 - **Icons:** Use the SVG sprite — `<use href="https://starter-project-ds.netlify.app/icons.svg#icon-name">`
 - **Tokens:** CSS custom properties like `var(--text-default)`, `var(--bg-brand)`, `var(--space-400)`
 
+The template includes Google Fonts (Inter + Roboto Mono) and base body styles out of the box — do not remove these, as the DS tokens depend on them.
+
 ## Data layer
 
 Load JSON files into an in-memory store with CRUD helpers:

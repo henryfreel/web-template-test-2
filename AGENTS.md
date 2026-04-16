@@ -28,6 +28,34 @@ The DS is loaded via three CSS files and one JS file in `index.html`:
 <script src="https://starter-project-ds.netlify.app/js/main.js"></script>
 ```
 
+### Required: Google Fonts
+
+The DS tokens reference `'Inter'` and `'Roboto Mono'` but do **not** bundle the font files. The template includes these Google Fonts imports in `index.html` `<head>` **before** the DS stylesheets:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+```
+
+**Do not remove these.** Without them, `var(--font-sans)` and `var(--font-mono)` fall back to system fonts and the DS appearance breaks.
+
+### Required: Base body styles
+
+The DS components set `font-family` on individual elements but not on `body`. The template includes these base styles in `css/local.css`:
+
+```css
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-default);
+  color: var(--text-default);
+}
+```
+
+**Do not remove these.** They ensure DS tokens cascade to all page content and that the page background/text colors respond to the theme toggle.
+
+### General rules
+
 Do not duplicate DS styles locally. Use DS classes directly in HTML (`btn btn-brand`, `ds-table`, `list-row`, etc.). For project-specific overrides, use `css/local.css`.
 
 ## Available DS Components
